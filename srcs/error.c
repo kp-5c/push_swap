@@ -6,25 +6,50 @@
 /*   By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 15:38:28 by ebenoist          #+#    #+#             */
-/*   Updated: 2025/06/09 16:29:38 by ebenoist         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:04:40 by ebenoist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_error(void)
+void	ft_error_free_split(t_list **a, char **av, int sp)
 {
-	write(2, "Error/n", 6);
+	int i;
+	
+	i = 1;
+	write(2, "Error\n", 6);
+	if (sp > 1 && av)
+	{
+		i = 0;
+		if(!av)
+			return;
+		while(av[i])
+			free(av[i++]);
+		free(av);
+	}
+	if (a && *a)
+	{
+		ft_lstclear(a);
+	}
 	exit(1);
 }
-void	free_split(char **tab)
+
+void	free_programme(t_list **a, t_list **b, char **av, int sp)
 {
 	int	i;
-	
-	i = 0;
-	if(!tab)
-		return;
-	while(tab[i])
-		free(tab[i++]);
-	free(tab);
+
+	i = 1;
+	if (sp > 1 && av)
+	{
+		i = 0;
+		if(!av)
+			return;
+		while(av[i])
+			free(av[i++]);
+		free(av);
+	}
+	if (a && *a)
+		ft_lstclear(a);
+	if (b && *b)
+		ft_lstclear(b);
 }

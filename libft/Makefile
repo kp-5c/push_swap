@@ -6,19 +6,15 @@
 #    By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/06 09:52:46 by ebenoist          #+#    #+#              #
-#    Updated: 2025/06/06 11:09:31 by ebenoist         ###   ########.fr        #
+#    Updated: 2025/06/11 16:20:19 by ebenoist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 
-CC		= cc
+CC		= cc -g
 
 CFLAGS	= -Wall -Werror -Wextra 
-
-AR		= ar
-
-ARFLAGS	= rcs
 
 SRC		=	ft_atoi.c\
 			ft_calloc.c\
@@ -59,34 +55,28 @@ SRC		=	ft_atoi.c\
 			ft_putnbr_hexa.c\
 			ft_putnbr_unsigned.c\
 			ft_putnbr.c\
-			ft_putstr.c
-			
-BONUS_SRC =	ft_lstnew_bonus.c\
+			ft_putstr.c\
+			ft_lstnew_bonus.c\
 			ft_lstadd_front_bonus.c\
 			ft_lstadd_back_bonus.c\
 			ft_lstdelone_bonus.c\
 			ft_lstclear_bonus.c\
 			ft_lstlast_bonus.c\
-			ft_lstsize_bonus.c\
-			ft_lstiter_bonus.c\
-			ft_lstmap_bonus.c
+			ft_lstsize_bonus.c
 			
+HEADERS	= libft.h
 OBJ		= $(SRC:.c=.o)
-BONUS_OBJ  = $(BONUS_SRC:.c=.o)
 
 all : $(NAME) 
 
 $(NAME): $(OBJ)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
+	ar rcs $(NAME) $^
 
-bonus: $(BONUS_OBJ)
-	$(AR) $(ARFLAGS) $(NAME) $(BONUS_OBJ) 
-
-%.o: %.c
+%.o: %.c $(HEADERS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

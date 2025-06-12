@@ -6,16 +6,16 @@
 /*   By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:58:55 by ebenoist          #+#    #+#             */
-/*   Updated: 2025/05/06 12:05:38 by ebenoist         ###   ########.fr       */
+/*   Updated: 2025/06/10 16:17:56 by ebenoist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	nb;
-	int	value;
+	long	nb;
+	long	value;
 	int	i;
 
 	nb = 0;

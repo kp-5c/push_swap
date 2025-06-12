@@ -6,7 +6,7 @@
 /*   By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 11:25:59 by ebenoist          #+#    #+#             */
-/*   Updated: 2025/06/09 13:34:12 by ebenoist         ###   ########.fr       */
+/*   Updated: 2025/06/12 11:38:29 by ebenoist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,16 @@
 
 # include "../libft/libft.h"
 
-typedef struct s_pile
+typedef struct s_liste
 {
-    void   *top;
-    void   *bot;
+    t_list  *a;
+    t_list  *b;
     int     size;
 }   t_pile;
 
-void    pile_init(t_pile *p);
-void    pile_clear(t_pile *p);
-void    op_pa(t_pile *a, t_pile *b);
-void    op_pb(t_pile *a, t_pile *b);
-void    op_sa(t_pile *a);
-void    op_ra(t_pile *a);
-void    op_rra(t_pile *a);
-
+void	ft_error_free_split(t_list **a, char **av, int sp);
+int     ft_atoi2(t_list *a, char *avi, char **av, int sp);
+t_list  *ft_create_stack(int ac, char **av, int sp);
+void	free_programme(t_list **a, t_list **b, char **av, int sp);
+void	ft_check_twins(t_list *a, char **av, int sp);
 #endif

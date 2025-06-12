@@ -6,13 +6,8 @@
 /*   By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 13:51:25 by ebenoist          #+#    #+#             */
-/*   Updated: 2025/06/09 16:08:01 by ebenoist         ###   ########.fr       */
+/*   Updated: 2025/06/11 14:43:06 by ebenoist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	sa(t_pile*a)
-{
-	
-}
