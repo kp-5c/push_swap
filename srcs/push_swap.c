@@ -6,7 +6,7 @@
 /*   By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 13:25:42 by ebenoist          #+#    #+#             */
-/*   Updated: 2025/06/23 15:34:31 by ebenoist         ###   ########.fr       */
+/*   Updated: 2025/06/25 14:45:17 by ebenoist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	check_av(char *str)
 	return (0);
 }
 
-static void	ft_control(t_list *a,int ac, char **av, int sp)
+static void	ft_control(t_list *a, int ac, char **av, int sp)
 {
 	int	i;
 
@@ -51,44 +51,36 @@ static void	ft_control(t_list *a,int ac, char **av, int sp)
 	if (sp == 1)
 		i = 0;
 	while (i < ac)
-	{	
+	{
 		if (check_av(av[i]) != 0)
 			ft_error_free_split(&a, av, sp);
 		i++;
 	}
 }
 
-int main (int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_list	*a;
 	t_list	*b;
-	int				sp;
+	int		sp;
 
 	a = NULL;
-	b = NULL; 
+	b = NULL;
 	sp = 0;
 	if (ac == 1)
 		return (0);
 	if (ac == 2)
 	{
-		av = ft_split (av[1], ' ');
+		av = ft_split(av[1], ' ');
 		if (!av)
 			ft_error_free_split(&a, av, sp);
 		sp = 1;
-		ac = ft_ajust_ac (a, av, sp);
+		ac = ft_ajust_ac(a, av, sp);
 	}
-	ft_control (a, ac, av, sp);
-	a = ft_create_stack (ac, av, sp);
+	ft_control(a, ac, av, sp);
+	a = ft_create_stack(ac, av, sp);
 	ft_check_twins(a, av, sp);
 	index_creat(&a, av, sp);
-	sort_stack(&a);
-	/*t_list *tmp = a;
-	while(tmp)
-	{
-		ft_printf("%d", tmp -> content);
-		tmp = tmp -> next;
-		ft_printf("\n");
-	}*/
+	sort_stack(&a, &b);
 	free_programme(&a, &b, av, sp);
 }
-

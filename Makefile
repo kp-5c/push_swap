@@ -6,7 +6,7 @@
 #    By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/06 13:45:48 by ebenoist          #+#    #+#              #
-#    Updated: 2025/06/23 14:09:31 by ebenoist         ###   ########.fr        #
+#    Updated: 2025/06/25 11:00:23 by ebenoist         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC		=	srcs/error.c\
 			srcs/push_swap_index3.c\
 			srcs/fonction_S_P.c\
 			srcs/fonction_R.c\
+			srcs/radix.c\
 	
 OBJ		= $(SRC:.c=.o)
 

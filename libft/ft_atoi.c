@@ -6,7 +6,7 @@
 /*   By: ebenoist <ebenoist@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:58:55 by ebenoist          #+#    #+#             */
-/*   Updated: 2025/06/10 16:17:56 by ebenoist         ###   ########.fr       */
+/*   Updated: 2025/06/24 13:56:42 by ebenoist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ long	ft_atoi(const char *str)
 {
 	long	nb;
 	long	value;
-	int	i;
+	int		i;
 
 	nb = 0;
 	value = 1;
